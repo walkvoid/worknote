@@ -1,4 +1,4 @@
-package com.jia.concurrent;
+package com.github.walkvoid.worknote.concurrent;
 
 import org.junit.Test;
 

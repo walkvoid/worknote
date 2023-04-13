@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com</groupId>
-    <artifactId>jia</artifactId>
+    <groupId>com.github.walkvoid</groupId>
+    <artifactId>worknote</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>java-interview-arrange</name>
-    <description>Java interview arrange</description>
+    <name>worknote</name>
+    <description>Java worknote</description>
 
     <properties>
         <java.version>1.8</java.version>

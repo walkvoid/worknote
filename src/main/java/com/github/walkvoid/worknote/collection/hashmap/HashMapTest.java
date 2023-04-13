@@ -1,4 +1,4 @@
-package com.jia.collection.hashmap;
+package com.github.walkvoid.worknote.collection.hashmap;
 
 import org.junit.Test;
 

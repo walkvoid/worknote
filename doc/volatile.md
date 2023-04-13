@@ -14,8 +14,8 @@ value for the variable (§17.4).
     一个成员变量使用了volatile关键字声明，java的内存模型会确保多线程看到一致性的一个结果。
 ```
 总结来说，volatile保证了内存可见性，按照java的内存模型，每个线程都有自己单独的内存，当一个线程更新一个位于主内存的共享变量时，该线程会
-先将变量从主内存复制到自己的线程内存中，更新完毕后再将结果刷新回主内存，这个几个操作并不是原子性的，volatile总是保证主内存的共享变量
-值是最新的，它的做法时：一个volatile变量总是在主内存中，线程对它的读写都是在主内存进行。
+先将变量从主内存复制到自己的线程内存中，更新完毕后再将结果刷新回主内存，这个几个操作并不是原子性的，volatile总是保证主内存的共享变量值
+是最新的，它的做法时：一个volatile变量总是在主内存中，线程对它的读写都是在主内存进行。
 
 在[java的开发手册8.3.1.4](https://docs.oracle.com/javase/specs/jls/se9/html/jls-8.html#jls-8.3.1.4)中有一个例子，该例子也可以
 本项目的[VolatileTest.java](..%2Fsrc%2Fmain%2Fjava%2Fcom%2Fjia%2Fconcurrent%2FVolatileTest.java)，有两个共享变量i和j，在一个
@@ -24,3 +24,4 @@ value for the variable (§17.4).
 
 参考：
 - 谷歌搜索"volatile thread safe"
+- [java-volatile](https://chercher.tech/java-programming/java-volatile)

@@ -1,4 +1,4 @@
-package com.jia.collection.concurrenthashmap;
+package com.github.walkvoid.worknote.collection.concurrenthashmap;
 
 /**
  * @author jiangjunqing

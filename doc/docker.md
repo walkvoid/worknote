@@ -50,9 +50,9 @@ docker run -id --name=mysql-8.0.32 \
 -e MYSQL_ROOT_PASSWORD=Aa@123456 \
 mysql:8.0.32 
 #如果要远程链接，还要授权
-alter user 'root'@'%' identified with mysql_native_password by '123456';
+alter user 'root'@'%' identified with mysql_native_password by 'Aa@123456';
 #刷新刚授权的配置
-#flush privileges;
+flush privileges;
 ```
 
  

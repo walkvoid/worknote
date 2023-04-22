@@ -5,6 +5,13 @@ git reset --soft {commitId}
 
 # 2. 本地提交后重新强制push，保证远端和本地一样
 ```
+##### 远程仓库修改
+```text
+#获取远程仓库地址
+git remote get-url origin
+#更改远程仓库地址
+git remote set-url origin git@github.com:aaa/bbb.git
+```
 
 ##### 修改历史提交记录的坐着和邮箱信息
 ```text

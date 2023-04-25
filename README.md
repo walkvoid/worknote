@@ -2,6 +2,7 @@
 ## ====常用工具====
 #### [Git常用的操作](./doc/git.md)
 #### [Docker常用的操作](./doc/docker.md)
+#### [linux常用的操作](./doc/linuxcmd.md)
 
 ## ====并发框架====
 #### [线程池](./doc/threadpoolexecutor.md)

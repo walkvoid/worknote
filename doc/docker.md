@@ -44,15 +44,16 @@ docker rm {容器id或者容器名称}
 # 安装mysql
 docker run -id --name=mysql-8.0.32 \
 -p 3306:3306 \
--v /Users/jiangjunqing/dockervolumes/mysql-8.0.32/conf:/etc/mysql/conf.d \
--v /Users/jiangjunqing/dockervolumes/mysql-8.0.32/log:/var/log \
--v /Users/jiangjunqing/dockervolumes/mysql-8.0.32/data:/var/lib/mysql \
+-v ~/dockervolumes/mysql-8.0.32/conf/my.cnf:/etc/my.cnf \
+-v ~/dockervolumes/mysql-8.0.32/log:/var/log \
+-v ~/dockervolumes/mysql-8.0.32/data:/var/lib/mysql \
 -e MYSQL_ROOT_PASSWORD=Aa@123456 \
 mysql:8.0.32 
 #如果要远程链接，还要授权
 alter user 'root'@'%' identified with mysql_native_password by 'Aa@123456';
 #刷新刚授权的配置
 flush privileges;
+# /Users/jiangjunqing/
 ```
 
  

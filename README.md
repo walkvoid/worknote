@@ -11,3 +11,11 @@
 
 ## ====计算机基础====
 #### [浮点数的二进制表示](./doc/float-binary.md)
+
+## ====Redis使用====
+#### [客户端缓存-1(官方文档翻译)](./doc/float-binary.md)
+#### [客户端缓存-2(动手实践)](./doc/float-binary.md)
+
+## ====Redis原理====
+#### [持久化-1(官方文档翻译)](./doc/float-binary.md)
+#### [持久化-2(动手实践)](./doc/float-binary.md)

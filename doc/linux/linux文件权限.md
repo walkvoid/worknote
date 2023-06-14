@@ -16,7 +16,7 @@ drwxr-x---    3 jiangjunqing  staff        96  6 14 11:34 sys
 ```
 详细解释看下图：
 
-![](../../img/img.png)
+![](../../img/linux文件权限-1.png)
 
 第一列第0位表示文件类型，可选值有以下几种：
 - 当为 d，则是目录；

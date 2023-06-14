@@ -39,6 +39,11 @@ docker ps -a
 docker rm {容器id或者容器名称}
 ```
 
+- 容器与宿主机文件移动
+``` txt
+docker rm {容器id或者容器名称}
+```
+
 - 常见软件的安装脚本
 ``` 
 # 安装mysql

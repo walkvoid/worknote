@@ -20,3 +20,6 @@
 #### [linux常用命令](doc/linux/linux常用命令.md)
 #### [linux文件权限](./doc/linux/linux文件权限.md)
 
+## mysql
+#### [mysql的配置](doc/mysql/mysql的配置.md)
+

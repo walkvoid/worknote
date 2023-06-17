@@ -19,9 +19,17 @@ mysql的配置浩如烟海，我们这里并不是要介绍mysql具体的配置�
 ## 三.mysql配置文件加载位置-unix
 在unix系统或者类unix系统中，例如centos或者macOS系统，mysql的配置文件默认以.cnf作为文件后缀
 按下图的顺序加载，如果有相同的配置，后面加载的配置项会覆盖前面的：
-
-![](../../img/mysql配置更改-1.png)
-
+```text
+  File Name	                   Purpose
+/etc/my.cnf	                Global options
+/etc/mysql/my.cnf	        Global options
+SYSCONFDIR/my.cnf	        Global options
+$MYSQL_HOME/my.cnf	        Server-specific options (server only)
+defaults-extra-file             The file specified with --defaults-extra-file, if any
+~/.my.cnf	                User-specific options
+~/.mylogin.cnf	                User-specific login path options (clients only)
+DATADIR/mysqld-auto.cnf	        System variables persisted with SET PERSIST or SET PERSIST_ONLY (server only)
+```
 
 一份典型的配置文件my.cnf看起来是这样的：
 ```text

@@ -21,6 +21,6 @@
 #### [linux文件权限](./doc/linux/linux文件权限.md)
 
 ## mysql
-#### [mysql的配置](doc/mysql/mysql的配置更改.md)
-#### [mysql的日志](doc/mysql/mysql的日志.md)
+#### [mysql的配置更改](doc/mysql/mysql的配置更改.md)
+#### [mysql的日志配置](doc/mysql/mysql的日志配置.md)
 

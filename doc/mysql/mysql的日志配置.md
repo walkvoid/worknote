@@ -141,7 +141,9 @@ log_error_services='log_filter_internal; log_sink_internal; log_sink_json'
 ```
 
 ## The Binary log
-binlog日志也叫二进制日志，有两个作用：主从复制传输作为数据的载体和数据恢复，基于后者，binlog日志总是建议打开的
+binlog日志也叫二进制日志，有两个作用：主从复制传输作为数据的载体和数据恢复，基于后者，binlog日志总是建议打开的。
+MySQL 8.0 开始，二进制日志记录默认启用，只有在启动时指定 --skip-log-bin 或 --disable-log-bin 选项时才会禁用，并且默认是写到mysql的
+数据目录下。
 ```text
 #my.cnf
 [mysqld]
@@ -153,5 +155,5 @@ log_bin不是一个开关配置，它是指定binlog日志的基本名字，实�
 要关闭binlog日志，需要注释log_bin配置，如#log_bin=mybinlog
 
 
-## 附录
-更多信息请看官方文档： [mysql8-5.4 MySQL Server Logs](https://dev.mysql.com/doc/refman/8.0/en/server-logs.html)
+## 参考资料
+[mysql8-5.4 MySQL Server Logs](https://dev.mysql.com/doc/refman/8.0/en/server-logs.html)

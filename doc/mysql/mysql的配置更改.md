@@ -53,5 +53,5 @@ quick
 
 在最下面的一行!includedir /etc/mysql/conf.d/ 表示mysql也将加载/etc/mysql/conf.d/下的配置文件，但是配置文件必须是 .cnf结尾，需要
 注意的是，用这种方式加载的配置文件加载顺序是随机的。
-## 附录
-更多的信息可以看mysql的官方文档 [mysql8.0-4.2.2.2 Using Option Files](https://dev.mysql.com/doc/refman/8.0/en/option-files.html)
+## 参考资料
+[mysql8.0-4.2.2.2 Using Option Files](https://dev.mysql.com/doc/refman/8.0/en/option-files.html)

@@ -24,4 +24,5 @@
 #### [mysql的配置更改](doc/mysql/mysql的配置更改.md)
 #### [mysql的日志配置](doc/mysql/mysql的日志配置.md)
 #### [mysql的多版本控制](doc/mysql/mysql的多版本控制.md)
+#### [mysql的锁-1-全局锁](doc/mysql/mysql的多版mysql的锁-1-全局锁.md)
 

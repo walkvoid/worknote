@@ -149,10 +149,9 @@ MySQL 8.0 开始，二进制日志记录默认启用，只有在启动时指定 
 [mysqld]
 log_bin=mybinlog  
 ```
-log_bin不是一个开关配置，它是指定binlog日志的基本名字，实际的binlog日志是mybinlog.000001,mybinlog.000002,后面的序号递增。
+log_bin不是一个开关配置，它是指定binlog日志的基本名字(不含后缀，默认"binlog")，例如根据上图的配置，实际的binlog日志是mybinlog.000001,
+mybinlog.000002,后面的序号递增。
 在mysql每一次启动中，mysql都会创建新的binlog日志。
-
-要关闭binlog日志，需要注释log_bin配置，如#log_bin=mybinlog
 
 
 ## 参考资料

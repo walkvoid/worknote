@@ -27,3 +27,6 @@
 ### [mysql的锁-1-全局锁](doc/mysql/mysql的多版mysql的锁-1-全局锁.md)
 ### [mysql的undo-logs](doc/mysql/mysql的undo-logs.md)
 
+## spring-boot
+### [mysql的配置更改](doc/springboot/@ConfigurationProperties的原理.md)
+

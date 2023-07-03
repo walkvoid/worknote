@@ -29,4 +29,5 @@
 
 ## spring-boot
 ### [mysql的配置更改](doc/springboot/@ConfigurationProperties的原理.md)
+### [mysql的配置更改](doc/springboot/BeanPostProcessor.md)
 

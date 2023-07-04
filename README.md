@@ -28,6 +28,7 @@
 ### [mysql的undo-logs](doc/mysql/mysql的undo-logs.md)
 
 ## spring-boot
-### [mysql的配置更改](doc/springboot/@ConfigurationProperties的原理.md)
-### [mysql的配置更改](doc/springboot/BeanPostProcessor.md)
+### [@ConfigurationProperties的原理](doc/springboot/@ConfigurationProperties的原理.md)
+### [BeanPostProcessor的原理](doc/springboot/BeanPostProcessor.md)
+### [@Import注解](doc/springboot/@Import注解.md)
 

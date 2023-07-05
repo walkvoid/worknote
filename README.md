@@ -31,4 +31,5 @@
 ### [@ConfigurationProperties的原理](doc/springboot/@ConfigurationProperties的原理.md)
 ### [BeanPostProcessor的原理](doc/springboot/BeanPostProcessor.md)
 ### [@Import注解](doc/springboot/@Import注解.md)
+### [springboot的初始化器](doc/springboot/springboot的初始化器.md)
 

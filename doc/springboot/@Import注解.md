@@ -111,7 +111,15 @@ public interface ImportBeanDefinitionRegistrar {
 7.org.springframework.context.annotation.ConfigurationClassParser#parse
 8.org.springframework.context.annotation.ConfigurationClassParser#processImports
 ```
-1.这里我们主要关注ConfigurationClassPostProcessor实现的接口类BeanFactoryPostProcessor
+1.这里我们主要关注ConfigurationClassPostProcessor实现的接口类BeanDefinitionRegistryPostProcessor,BeanDefinitionRegistryPostProcessor
+还有一个父接口是BeanFactoryPostProcessor。
+```java
+public interface BeanDefinitionRegistryPostProcessor extends BeanFactoryPostProcessor {
+    
+	void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException;
+}
+
+```
 ```java
 @FunctionalInterface
 public interface BeanFactoryPostProcessor {
@@ -125,6 +133,9 @@ public interface BeanFactoryPostProcessor {
 可以调整BeanDefinition来达到我们想要的目的，BeanFactoryPostProcessor典型的实现就是mybatis的MapperScannerConfigurer类，它的作用是
 将Mapper都转换成MapperFactoryBean注入到spring容器中。如果我们需要改变bean实例（非BeanDefinition实例），我们就需要实现BeanPostProcessor
 的接口方法做一些处理，因为只有在此时bean实例才创建完成了。
+
+调用的先后顺序先调用BeanDefinitionRegistryPostProcessor的postProcessBeanDefinitionRegistry方法，再调用BeanFactoryPostProcessor
+的postProcessBeanFactory方法。
 
 2.关于ConfigurationClassPostProcessor如何被找到
 ```text

@@ -34,4 +34,6 @@
 ### [BeanPostProcessor的原理](doc/springboot/BeanPostProcessor.md)
 ### [@Import注解](doc/springboot/@Import注解.md)
 ### [springboot的初始化器](doc/springboot/springboot的初始化器.md)
+### [自动配置选择依赖组件](doc/springboot/自动配置选择依赖组件.md)
+### [bean的种类](doc/springboot/bean的种类.md)
 

@@ -40,10 +40,14 @@ public @interface ConfigurationProperties {
 
 ## 流程说明
 1.整个属性绑定流程是嵌入在bean的创建流程中，所以这个java类也必须是spring的bean。
+
 2.在初始化bean的的方法initializeBean中，如果bean不是合成bean(所谓合成bean，就是只非应用程序定义的，例如通过aop增强的bean就是一个
 合成bean),就调用BeanPostProcessor的postProcessAfterInitialization方法。
+
 3.这个BeanPostProcessor的实现类是ConfigurationPropertiesBindingPostProcessor，ConfigurationPropertiesBindingPostProcessor
 是在refresh方法中的org.springframework.context.support.AbstractApplicationContext#registerBeanPostProcessors,需要注意的是，
 在org.springframework.context.support.AbstractApplicationContext#prepareBeanFactory也有添加BeanPostProcessor的操作。
 postProcessAfterInitialization方法里面调用了ConfigurationPropertiesBinder的bind方法，这里就是实际的绑定入口。
+
 4.在JavaBeanBinder的内部类BeanProperty中调用setValue方法完成属性的赋值。
+

@@ -36,4 +36,5 @@
 ### [springboot的初始化器](doc/springboot/springboot的初始化器.md)
 ### [自动配置选择依赖组件](doc/springboot/自动配置选择依赖组件.md)
 ### [bean的种类](doc/springboot/bean的种类.md)
+### [普通bean的创建顺序](doc/springboot/普通bean的创建顺序.md)
 

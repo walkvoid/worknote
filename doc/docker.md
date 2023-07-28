@@ -61,4 +61,13 @@ flush privileges;
 # /Users/jiangjunqing/
 ```
 
+```
+#安装redis命令:
+docker run -id --name=redis4 -p 6379:6379 \
+-v ~/software/docker/volumes/redis-4.0.6:/data/redis \
+redis:4.0.6 \
+redis-server /data/redis/redis.conf \
+# redis-server /data/redis/redis.conf 这一行用来制定redis使用配置文件启动,注意需要将daemonize no而不是yes,不然会启动不起来
+```
+
  

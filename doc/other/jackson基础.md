@@ -118,6 +118,65 @@ User user = objectMapper.readValue(walkvoidJson, User.class);
 ```
 这个例子中我们标记多参构造方法作为创建器,实际上,我们也可以使用一个普通方法作为创建器.
 
+### 序列化配置
+jackson的配置有非常多,这里仅仅列举一些:
+```groovy
+ObjectMapper objectMapper = new ObjectMapper;
+
+//启用,输出的json为pretty json
+mapper.enable(SerializationFeature.INDENT_OUTPUT);
+
+//当序列化一个空java pojo时,默认会抛出异常,关闭此配置后,将不会抛出异常
+mapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
+
+//默认的,jackson序列化java.util.Date, Calendar时,结果是一个long型的时间戳,可以关闭此配置
+mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+
+//默认的,反序列化pojo遇到一个未知属性时会抛出异常,关闭此配置,将不会抛出异常
+mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+
+//启用,当json的属性是一个空字符串(""),可以将此空字符串序列化成null
+mapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
+
+//添加java8的时间处理模块, 注意objectMapper的配置是有缓存的,这意味着你不能在运行时修改配置,因为你的修改将不生效(以缓存中老的配置为准),
+//常见的做法是在静态代码块中配置好,后续的使用都不修改配置信息
+JavaTimeModule javaTimeModule = new JavaTimeModule();
+objectMapper.registerModule(javaTimeModule);
+```
+
+### 更加细粒度地操纵json
+```groovy
+//手动构造一个json串
+ObjectMapper mapper = new ObjectMapper;
+// First: write simple JSON output
+File jsonFile = new File("test.json");
+// note: method added in Jackson 2.11 (earlier would need to use
+// mapper.getFactory().createGenerator(...)
+JsonGenerator g = f.createGenerator(jsonFile, JsonEncoding.UTF8);
+// write JSON: { "message" : "Hello world!" }
+g.writeStartObject();
+g.writeStringField("message", "Hello world!");
+g.writeEndObject();
+g.close();
+```
+```groovy
+//手动解析json串, 每次调用nextToken()方法,JsonParser都会移动到下一个token,在jackson中, json最小操作的单位抽象成了token
+String json = "{\"name\":\"walkvoid\",\"age\":18,\"birthday\":[2013,10,19]}";
+JsonParser jsonParser = objectMapper.createParser(json);
+
+JsonToken jsonToken1 = jsonParser.nextToken(); 
+log.info("{}", jsonParser.getText());          // {
+JsonToken jsonToken2 = jsonParser.nextToken(); // name
+JsonToken jsonToken3 = jsonParser.nextToken(); // walkvoid
+JsonToken jsonToken4 = jsonParser.nextToken(); // age
+JsonToken jsonToken5 = jsonParser.nextToken(); // 18
+JsonToken jsonToken6 = jsonParser.nextToken(); // birthday
+JsonToken jsonToken7 = jsonParser.nextToken(); // [
+JsonToken jsonToken8 = jsonParser.nextToken(); // 2013
+log.info("{}", jsonParser.getText());
+```
+
+
 
 ### 参考
 [github使用文档](https://github.com/FasterXML/jackson-docs)

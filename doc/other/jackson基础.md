@@ -175,7 +175,9 @@ JsonToken jsonToken7 = jsonParser.nextToken(); // [
 JsonToken jsonToken8 = jsonParser.nextToken(); // 2013
 log.info("{}", jsonParser.getText());
 ```
+### jackson的注解
 
+### jackson序列化的流程
 
 
 ### 参考

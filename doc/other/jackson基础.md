@@ -73,9 +73,9 @@ JsonNode brandNode = jsonNode.at("/car/brand");
 String s = brandNode.asText();
 //s == "benz"
 ```
-jackson可以将json字符串反序列化成java bean, List或者Map,甚至还可以反序列化为最基础的树结构JsonNode,此时返回的是树的根节点,jackson支持文件
-路径式的访问该树下的任意节点,正如你所看到上述例子中的"/car/brand",其中最开始的"/"表示根节点.
-JsonNode是一个抽象类,其类图如下:
+jackson可以将json字符串反序列化成java pojo, List或者Map,甚至还可以反序列化为最基础的树结构JsonNode,此时返回的是树的根节点,jackson支持
+文件路径式的访问该树下的任意节点,正如你所看到上述例子中的"/car/brand",其中最开始的"/"表示根节点.
+JsonNode是一个抽象类,其类图(部分)如下:
 ```mermaid
 flowchart LR;
    JsonNode--impl-->TreeNode;
@@ -92,10 +92,10 @@ flowchart LR;
 上面的例子中,将一个json反序列化为java pojo时,实例化pojo时默认会调用该pojo类的空参构造方法,属性赋值默认使用set方法.当然我们可以自定义实例化方法.
 使用自定义的创建器后,属性赋值就不用依赖set方法了, 看例子:
 ```java 
-@Setter
-//@Getter
+//@Setter
+@Getter
 @AllArgsConstructor
-@NoArgsConstructor
+//@NoArgsConstructor
 public static class User {
     private String name;
     private Integer age;
@@ -116,7 +116,7 @@ String walkvoidJson = "{\"name\":\"walkvoid\",\"age\":18,\"car\":{\"name\":\"my 
 //使用自定义创建器 反序列化对象
 User user = objectMapper.readValue(walkvoidJson, User.class);
 ```
-这个例子中我们标记多参构造方法作为创建器,实际上,我们也可以使用一个普通方法作为创建器.
+这个例子中我们使用@JsonCreator标记多参构造方法作为创建器,实际上,我们也可以标记一个普通方法作为创建器.
 
 ### 序列化配置
 jackson的配置有非常多,这里仅仅列举一些:
@@ -143,6 +143,8 @@ mapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
 JavaTimeModule javaTimeModule = new JavaTimeModule();
 objectMapper.registerModule(javaTimeModule);
 ```
+objectMapper的配置是有缓存的,这意味着你做好了配置并使用了它,例如序列化一个pojo，紧接着你再更改配置是不生效的。 常见的做法是在静态代码块中配置好,
+后续的使用都不修改配置信息。
 
 ### 更加细粒度地操纵json
 ```groovy
@@ -173,12 +175,45 @@ JsonToken jsonToken5 = jsonParser.nextToken(); // 18
 JsonToken jsonToken6 = jsonParser.nextToken(); // birthday
 JsonToken jsonToken7 = jsonParser.nextToken(); // [
 JsonToken jsonToken8 = jsonParser.nextToken(); // 2013
-log.info("{}", jsonParser.getText());
 ```
 ### jackson的注解
+@JsaonFormat是程序员使用最多的注解，我们可以使用该注解指定序列化后的格式,指定时区和指定地区等。
+```groovy
+public class Pojo {
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime createTime;
+}
+```
+---
+@JsonProperty允许重命名字段名，设置字段的默认值，设置字段是否是必修等等。
+```groovy
+public class Pojo {
+    @JsonProperty(value = "create_time")
+    private LocalDateTime createTime;
+}
+```
+---
+@JsonIgnore标记有一个字段，jackson将不会对他做任何序/反列化操作。
+```groovy
+public class Pojo {
+    @JsonIgnore(value = "create_time")
+    private LocalDateTime createTime;
+}
+```
+---
+@JsonSerialize和@JsonDeserialize可以分别指定自定义的序列化器和反序列化器,然后写自己的序列化和反序列化逻辑。
+```groovy
+public class Pojo {
+    @JsonSerialize(using = MyLocalDateTimeSerializer.class)
+    @JsonDeserialize(using = MyLocalDateTimeDeserializer.class)
+    private LocalDateTime createTime;
+}
+```
 
 ### jackson序列化的流程
+包含两部分ObjectMapper实例初始化过程和调用writeValueAsString()方法的过程
+
 
 
 ### 参考
-[github使用文档](https://github.com/FasterXML/jackson-docs)
+[jackson使用文档](https://github.com/FasterXML/jackson-docs)

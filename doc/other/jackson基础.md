@@ -1,4 +1,4 @@
-## 简介
+### 简介
 jackson是spring默认支持的json序列化工具, 通常来说, 核心的三个jar包:`jackson-core`,`jackson-annotations`,`jackson-databind`,还有包括支持不同数
 据类型的插件,比如jdk8中的时间格式(如LocalDate,LocalDateTime等)的插件`jackson-datatype-jsr310`等等,他们的依赖关系如图:
 ```mermaid
@@ -11,7 +11,7 @@ flowchart BT;
 所以原则上来说,我们只要引入jackson-datatype-jsr310的jar包就行了,实际项目说,核心的三个包需不需要声明式的重复引入,取决于所在项目或者公司的规范,
 不过遵照单一性原则,个人喜欢每个jar包都声明式的引入,当然,如果是接口-服务(api-service)分离的项目,在接口层,我们往往只需要引入`jackson-annotations`即可.
 
-## jackson的使用
+### jackson的使用
 ```java
 //先定义两个pojo类
 //POJO

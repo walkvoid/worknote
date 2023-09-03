@@ -142,5 +142,33 @@ spring.application.name=${my.project.name}
 <version>${revision}</version>
 <name>maven-demo1-module1-user-api</name>
 ```
+### maven源码的打包上传
+```text
+<plugin>
+    <artifactId>maven-source-plugin</artifactId>
+    <version>3.0.1</version>
+    <configuration>
+        <attach>true</attach>
+    </configuration>
+    <executions>
+        <execution>
+            <phase>compile</phase>
+            <goals>
+                <goal>jar</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+```
 
+### maven禁止项目deploy到远程仓库
+```text
+<plugin>
+    <artifactId>maven-deploy-plugin</artifactId>
+    <version>2.8.2</version>
+    <configuration>
+        <skip>true</skip>
+    </configuration>
+</plugin>
+```
 

@@ -70,7 +70,7 @@ maven中变量默认只在pom文件中使用,如果要扩大变量的使用范�
 spring.application.name=${my.project.name}
 ```
 
-在多模块嵌套的项目中,同一版本的定义参考:
+在多模块嵌套的项目中,统一版本的定义参考:
 </br>[intellij网站的提问](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360000439484-properties-in-parent-definition-are-prohibited-on-mac-osx-Intellij-2018-1-2)
 </br>[intellij网站的提问的问题跟踪](https://youtrack.jetbrains.com/issue/IDEA-179451)
 </br>[maven官网的解释](https://maven.apache.org/maven-ci-friendly.html)

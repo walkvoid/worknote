@@ -7,7 +7,7 @@
 ##### [👉👉👉maven插件开发.md](doc/tool/maven插件开发.md)
 
 ### 🚩并发框架
-#### [👉👉👉线程池](./doc/threadpoolexecutor.md)
+##### [👉👉👉线程池](./doc/threadpoolexecutor.md)
 ##### [👉👉👉spring的线程池](./doc/threadpoolexecutor.md)
 #####  [👉👉👉CompletableFuture](./doc/completablefuture.md)
 
@@ -23,7 +23,7 @@
 ##### [👉👉👉linux文件权限](./doc/linux/linux文件权限.md)
 
 ### 🚩mysql
-#### [👉👉👉mysql的配置更改](doc/mysql/mysql的配置更改.md)
+##### [👉👉👉mysql的配置更改](doc/mysql/mysql的配置更改.md)
 ##### [👉👉👉mysql的日志配置](doc/mysql/mysql的日志配置.md)
 ##### [👉👉👉mysql的多版本控制](doc/mysql/mysql的多版本控制.md)
 ##### [👉👉👉mysql的锁-1-全局锁](doc/mysql/mysql的多版mysql的锁-1-全局锁.md)
@@ -40,8 +40,14 @@
 ##### [👉👉👉bean的种类](doc/springboot/bean的种类.md)
 ##### [👉👉👉普通bean的创建顺序](doc/springboot/普通bean的创建顺序.md)
 
-### 🚩   其他
-##### [👉👉👉jackson基础](doc/other/jackson基础.md)
+
+### 🚩工具库
+##### [👉👉👉jackson基础](doc/tool/jackson基础.md)
+##### [👉👉👉maven的使用](doc/tool/maven的使用.md)
+##### [👉👉👉maven插件开发.md](doc/tool/maven插件开发.md)
+##### [👉👉👉nacos嵌入spring流程.md](doc/tool/nacos嵌入spring流程.md)
+
+
 
 
 

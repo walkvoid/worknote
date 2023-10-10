@@ -26,11 +26,13 @@ incr_sql = update seq_no set counter=counter+1 where prefix='ORDER' and counter_
      
  1    session1                       session2
          |                              |
- 2     start;                         start;
+ 2     start                          start
          |                              |
  3    incr_sql                       incr_sql
-         |                              ｜
- 4    commit;                          hang
+         |                              |
+ 4       |                           blocking
+         |                              |
+ 5     commit                           |   
                                         |
- 5                                   commit;         
+ 6                                    commit   
 ```

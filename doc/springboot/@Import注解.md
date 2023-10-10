@@ -118,14 +118,12 @@ public interface BeanDefinitionRegistryPostProcessor extends BeanFactoryPostProc
     
 	void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException;
 }
-
 ```
 ```java
 @FunctionalInterface
 public interface BeanFactoryPostProcessor {
     
 	void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException;
-
 }
 ```
 我们有一个类似的接口BeanPostProcessor，BeanFactoryPostProcessor执行是先于BeanPostProcessor的，BeanFactoryPostProcessor主要是

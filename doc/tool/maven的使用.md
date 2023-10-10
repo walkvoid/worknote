@@ -142,33 +142,152 @@ spring.application.name=${my.project.name}
 <version>${revision}</version>
 <name>maven-demo1-module1-user-api</name>
 ```
-### maven源码的打包上传
+
+### 常用插件:spring-boot-maven-plugin
+```text
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <version>2.7.9</version> //版本建议和springboot的版本保持一致
+            <executions>
+			    <execution>
+			        <phase>package</phase>
+			        <goals>
+		                <goal>repackage</goal>
+			        </goals>
+			    </execution>
+		    </executions>
+		    <configuration>
+                <mainClass>com.aaa.bbb.DemoApplication</mainClass> //有多个主类时，指定主类
+                <layout>ZIP</layout> //指定生成包的格式，默认是jar
+                <<skip>true</skip>> //生成一个普通的jar包
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+```
+spring-boot-maven-plugin与maven默认打包插件不同主要有：
+1. spring-boot-maven-plugin会将项目所使用的依赖jar都放到jar包里，这也是打出来的jar体积偏大(动则几百mb，普通的jar一般只有几mb)。
+2. spring-boot-maven-plugin所生成的jar是可执行的jar，即能使用java -jar *.jar 的方式启动，主要是jar包里的主配置清单信息不同
+```text
+## jar包名/META-INF/MANIFEST.MF
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: jiangjunqing
+Created-By: Apache Maven 3.5.4
+Build-Jdk: 1.8.0_352
+```
+```text
+# jar包名/META-INF/MANIFEST.MF
+Manifest-Version: 1.0
+Spring-Boot-Classpath-Index: BOOT-INF/classpath.idx
+Archiver-Version: Plexus Archiver
+Built-By: jiangjunqing
+Spring-Boot-Layers-Index: BOOT-INF/layers.idx
+Start-Class: com.aaa.bbb.DemoApplication
+Spring-Boot-Classes: BOOT-INF/classes/
+Spring-Boot-Lib: BOOT-INF/lib/
+Spring-Boot-Version: 2.7.9
+Created-By: Apache Maven 3.5.4
+Build-Jdk: 1.8.0_352
+Main-Class: org.springframework.boot.loader.JarLauncher
+```
+### 常用插件:maven-source-plugin
 ```text
 <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-source-plugin</artifactId>
     <version>3.0.1</version>
     <configuration>
-        <attach>true</attach>
+          <outputDirectory>/absolute/path/to/the/output/directory</outputDirectory> //生成源码的路径，默认是target下
+          <finalName>filename-of-generated-jar-file</finalName> //更改生成源码的文件名，默认是*-sources.jar
+          <attach>true</attach> //true 将上传到本地仓库或者远程私服
     </configuration>
     <executions>
         <execution>
-            <phase>compile</phase>
+            <phase>verify</phase>
             <goals>
-                <goal>jar</goal>
+                <goal>jar-no-fork</goal> //与jar项目，verify之前解阶段智只会执行一次，jar会执行两次
             </goals>
         </execution>
     </executions>
 </plugin>
 ```
+```text
+<profiles>
+<profile>
+  <id>release</id>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</profile>
+</profiles>
+```
 
-### maven禁止项目deploy到远程仓库
+### 常用插件:maven-deploy-plugin
 ```text
 <plugin>
     <artifactId>maven-deploy-plugin</artifactId>
     <version>2.8.2</version>
     <configuration>
-        <skip>true</skip>
+        <skip>true</skip> //此项目不参与deploy
     </configuration>
 </plugin>
 ```
+### 常用插件:maven-compiler-plugin
+```text
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>3.6.1</version>
+    <configuration>
+        <source>1.8</source> //指定源码的java版本 等同于在设置属性：<maven.compiler.source>1.8</maven.compiler.source>
+        <target>1.8</target> //指定class文件的java版本 等同于设置属性：<maven.compiler.target>1.8</maven.compiler.target>
+    </configuration>
+</plugin>          
+```
 
+### 常用插件:maven-resources-plugin
+```text
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-resources-plugin</artifactId>
+    <version>3.1.0</version>
+    <executions>
+        <execution>
+            <id>handle mapper xml</id>
+            <phase>process-sources</phase>
+            <goals>
+                <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+                <outputDirectory>${basedir}/target/classes</outputDirectory>
+                <resources>
+                    <resource>
+                        <directory>${basedir}/src/main/java</directory>
+                        <includes>
+                            <include>**/*.xml</include>
+                        </includes>
+                    </resource>
+                </resources>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+```

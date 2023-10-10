@@ -45,3 +45,17 @@ fi
 ' --tag-name-filter cat -- --branches --tags
 
 ```
+#### 基于远程分支创建新分支并切换到新分支
+```text
+git checkout -b 需要创建的新分支名 origin/已存在的远程分支名
+#切换后,当前分支的追踪分支还是旧的分支,并且只是在本地创建的新分支
+```
+#### 推送当前分支到远端并更新追踪分支
+```text
+git push -u origin 分支名
+```
+#### 更新追踪分支
+```text
+git branch --set-upstream-to=origin/远程分支名 本地分支名
+#如果是更新本地当前分支,“本地分支名”可以省略
+```

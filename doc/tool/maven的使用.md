@@ -280,9 +280,9 @@ Main-Class: org.springframework.boot.loader.JarLauncher
                 <outputDirectory>${basedir}/target/classes</outputDirectory>
                 <resources>
                     <resource>
-                        <directory>${basedir}/src/main/java</directory>
+                        <directory>${basedir}/src/main/java</directory> //xml文件打包的目录
                         <includes>
-                            <include>**/*.xml</include>
+                            <include>**/*.xml</include> //指定xml文件也参与打包
                         </includes>
                     </resource>
                 </resources>
@@ -291,3 +291,28 @@ Main-Class: org.springframework.boot.loader.JarLauncher
     </executions>
 </plugin>
 ```
+### 常用插件:maven-checkstyle-plugin
+代码风格检查插件
+```text
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-checkstyle-plugin</artifactId>
+    <version>3.1.1</version>
+    <configuration>
+        <configLocation>config/checkstyle.xml</configLocation> //检查规则文件路径，如果不配置默认使用sun_check.xml
+    </configuration>
+    <executions>
+        <execution>
+            <id>checkstyle</id>
+            <phase>validate</phase>
+            <goals>
+                <goal>check</goal>
+            </goals>
+            <configuration>
+                <failOnViolation>true</failOnViolation> //检查不通过将中断编译流程，打印错误
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+```
+详细的检查规则见[github仓库](https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/sun_checks.xml)

@@ -1,4 +1,15 @@
 # 工作笔记
+### 🚩计算机基础
+##### [👉👉👉浮点数的二进制表示](doc/computerscience/float-binary.md)
+##### [👉👉👉计算机的组成](doc/computerscience/computer-composition.md)
+
+### 🚩java基础
+##### [👉👉👉线程中断](./doc/javabasic/thead-interrupt.md)
+##### [👉👉👉java内存模型](./doc/javabasic/java-memory-model.md)
+
+### 🚩java常见类
+##### [👉👉👉CompletableFuture](doc/commonclass/completablefuture.md)
+
 ### 🚩常用工具
 ##### [👉👉👉Git常用的操作](./doc/git.md)
 ##### [👉👉👉Docker常用的操作](./doc/docker.md)
@@ -9,11 +20,7 @@
 ### 🚩并发框架
 ##### [👉👉👉线程池](./doc/threadpoolexecutor.md)
 ##### [👉👉👉spring的线程池](./doc/threadpoolexecutor.md)
-##### [👉👉👉CompletableFuture](./doc/completablefuture.md)
-
-### 🚩计算机基础
-##### [👉👉👉浮点数的二进制表示](doc/computerscience/float-binary.md)
-##### [👉👉👉计算机的组成](doc/computerscience/computer-composition.md)
+##### [👉👉👉CompletableFuture](doc/commonclass/completablefuture.md)
 
 ### 🚩Redis使用
 ##### [👉👉👉客户端缓存-1(官方文档翻译)](doc/computerscience/float-binary.md)

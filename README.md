@@ -6,9 +6,11 @@
 ### 🚩java基础
 ##### [👉👉👉线程中断](./doc/javabasic/thead-interrupt.md)
 ##### [👉👉👉java内存模型](./doc/javabasic/java-memory-model.md)
+##### [👉👉👉java关键字](./doc/javabasic/java-keywords.md)
 
 ### 🚩java常见类
 ##### [👉👉👉CompletableFuture](doc/commonclass/completablefuture.md)
+##### [👉👉👉AQS](doc/commonclass/AQS.md)
 
 ### 🚩常用工具
 ##### [👉👉👉Git常用的操作](./doc/git.md)

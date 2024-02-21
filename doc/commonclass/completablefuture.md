@@ -54,7 +54,7 @@ public void testRunAfterEitherAsync() throws InterruptedException, ExecutionExce
 一个结果,这个时候我们就可以使用thenCombine将两个任务A和B的执行结果都作为任务C参数进行处理.
 ```text
 @Test
-public void testRunAfterEitherAsync() throws InterruptedException, ExecutionException {
+public void testThenCombine() throws InterruptedException, ExecutionException {
     CompletableFuture.supplyAsync(()->doA(result)).thenCombine(CompletableFuture.supplyAsync(()->doB(result)),
         (doAResult,doBResult)-> doC(doAResult,doBResult))
         .get();
@@ -62,15 +62,14 @@ public void testRunAfterEitherAsync() throws InterruptedException, ExecutionExce
 }
 ```
 
-### 3.thenCompose的使用
+### 4.thenCompose的使用
 thenCompose方法可以处理前一个执行结果,然后返回一个新的CompletableFuture对象,与thenApply不同的是,这个新的CompletableFuture对象你可以
 自由构造更加的灵活,而thenApply仅仅只专注代码逻辑的实现.
 ```text
 @Test
-public void testRunAfterEitherAsync() throws InterruptedException, ExecutionException {
-    CompletableFuture.supplyAsync(()->doA(result)).thenCombine(CompletableFuture.supplyAsync(()->doB(result)),
-        (doAResult,doBResult)-> doC(doAResult,doBResult))
-        .get();
-    //因为这里doA和doB都是放到xxxAsync方法中,所以这里任务ABC所在的线程都可能是不同的
+public void testThenCompose() throws InterruptedException, ExecutionException {
+    CompletableFuture.supplyAsync(()->doA(result))
+                    .thenCompose(doAResult-> CompletableFuture.runAsync(()->doB(result)))
+                    .get();
 }
 ```

@@ -10,7 +10,9 @@
 
 ### 🚩java常见类
 ##### [👉👉👉CompletableFuture](doc/commonclass/completablefuture.md)
+##### [👉👉👉ThreadLocal](doc/commonclass/ThreadLocal.md)
 ##### [👉👉👉AQS](doc/commonclass/AQS.md)
+##### [👉👉👉可重入读写锁的原理ReentrantReadWriteLock](doc/commonclass/ReentrantReadWriteLock.md)
 
 ### 🚩常用工具
 ##### [👉👉👉Git常用的操作](./doc/git.md)

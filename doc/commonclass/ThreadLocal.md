@@ -25,7 +25,8 @@ private static AtomicInteger nextHashCode =  new AtomicInteger();
 private static final int HASH_INCREMENT = 0x61c88647;
 ```
 hash值的计算是从0开始累加0x61c88647，注意nextHashCode是一个static变量，这意味着在整个jvm是共享的，ThreadLocalMap的数组是2的n次幂 （
-默认值是16），还有一个经过精心设计的步长HASH_INCREMENT，这就保证了计算出来槽的位置总是能够均匀分布的。
+默认值是16），还有一个经过精心设计的步长HASH_INCREMENT，这就保证了计算出来槽的位置总是能够均匀分布的。注意这几个变量private static修饰，
+意味着ThreadLocal一经创建，这几个值就固定不变了，并且nextHashCode是整个jvm全局递增的。
 
 ### 3.ThreadLocalMap处理hash碰撞
 上面我们提到，一个线程在执行过程中，如果在不同地方调用不同的ThreadLocal.set方法，那么这个线程的ThreadLocalMap中就会有多个entry，这就必然

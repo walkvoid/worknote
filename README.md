@@ -7,6 +7,8 @@
 ##### [👉👉👉线程中断](./doc/javabasic/thead-interrupt.md)
 ##### [👉👉👉java内存模型](./doc/javabasic/java-memory-model.md)
 ##### [👉👉👉java关键字](./doc/javabasic/java-keywords.md)
+##### [👉👉👉java引用类型](./doc/javabasic/java-reference.md)
+##### [👉👉👉垃圾回收](./doc/javabasic/gc.md)
 
 ### 🚩java常见类
 ##### [👉👉👉CompletableFuture](doc/commonclass/completablefuture.md)

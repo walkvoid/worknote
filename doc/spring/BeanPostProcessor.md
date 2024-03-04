@@ -90,7 +90,7 @@ invokeInitMethods方法作用很简单，就是调用InitializingBean的afterPro
 
 ## 典型的例子
 一个典型的例子就是springboot绑定配置的ConfigurationPropertiesBindingPostProcessor，它在postProcessBeforeInitialization做了绑定
-属性的操作。这也是[@ConfigurationProperties注解的原理](../springboot/@ConfigurationProperties的原理.md)
+属性的操作。这也是[@ConfigurationProperties注解的原理](/@ConfigurationProperties的原理.md)
 
 ## 内置的BeanPostProcessor识别
 在上面的例子中，在ConfigurationPropertiesBindingPostProcessor中并未看到将其纳入spring管理的逻辑(比如加@Component注解)，那它是如何
@@ -116,4 +116,4 @@ class EnableConfigurationPropertiesRegistrar implements ImportBeanDefinitionRegi
 }
 ```
 所以当我们使用@ConfigurationProperties注解时，同时加上@EnableConfigurationProperties是比较推荐的，因为你不能总是依赖其他组件帮你
-注入ConfigurationPropertiesBindingPostProcessor这个bean。
+注入ConfigurationPropertiesBindingPostProcessor这个bean到spring容器中。

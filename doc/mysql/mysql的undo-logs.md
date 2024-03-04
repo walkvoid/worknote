@@ -3,8 +3,7 @@
 严格来说，undo logs是属于innodb引擎的，mysql的其他引擎例如MyISAM就没有undo logs，这很容易解释，因为undo logs是为了实现事务的，而
 MyISAM不具备事务特性。
 一个读写事务通常会产生很多个undo log，而一个undo log记录的是如何撤销最近一次更改的信息。
-如果事务A在一致性读的隔离条件下，需要看到某条数据的原始状态（此条数据已被另一个事务B修改，但是事务B还没有提交），此时事务A需要的数据将从
-undo log中检索。
+如果事务A在一致性读的隔离条件下，需要看到某条数据的原始状态（此条数据已被另一个事务B修改，但是事务B还没有提交），此时事务A需要的数据将从undo log中检索。
 undo log存在于undo log segments中，undo log segments又存在rollback segments中，而rollback segments 又存在undo tablespaces（
 存放常规的表的undo log）和 global temporary tablespaces（存放临时表undo log）中。注意，临时表是没有redo log（另一种日志）的，因为它
 不需要崩溃恢复，临时表的undo log仅仅是用在mysql运行时用作回滚。

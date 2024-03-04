@@ -48,10 +48,10 @@ quick
 
 !includedir /etc/mysql/conf.d/
 ```
-在上面的配置文件中，[client]，[mysqld]和[mysqldump]表示不同的分组，例如[client]下面的配置表示mysql客户端的配置，[mysqld]下面的配置表示
+在上面的配置文件中，[client]、[mysqld]和[mysqldump]表示不同的分组，例如[client]下面的配置表示mysql客户端的配置，[mysqld]下面的配置表示
 服务端的配置。
 
-在最下面的一行!includedir /etc/mysql/conf.d/ 表示mysql也将加载/etc/mysql/conf.d/下的配置文件，但是配置文件必须是 .cnf结尾，且此
+在最下面的一行!includedir /etc/mysql/conf.d/ 表示mysql也将加载/etc/mysql/conf.d/文件夹下的配置文件，但是配置文件必须是 .cnf结尾，且此
 文件夹下的文件将在最后加载， 需要注意的是，此文件夹下的配置文件加载的顺序是随机的。
 ## 参考资料
 [mysql8.0-4.2.2.2 Using Option Files](https://dev.mysql.com/doc/refman/8.0/en/option-files.html)

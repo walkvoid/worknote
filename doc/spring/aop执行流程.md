@@ -4,7 +4,7 @@
 这个代理bean有很多个CGLIB$CALLBACK_n(n表示数字0,1,2,...),按职能区分,这些CGLIB$CALLBACK_有的负责静态方法,有的负责代理Equals方法,有的负责hashcode方法等,
 其中有一个负责普通方法的动态拦截处理,需要说明的是,这些CGLIB$CALLBACK_n都是对应着CglibAopProxy的内部类实例.在执行到一个普通方法时,实际会调用
 CglibAopProxy.DynamicAdvisedInterceptor#intercept方法.
-```java
+```text
 //CglibAopProxy.DynamicAdvisedIntercepto.class
 //参数proxy: 就是UserService$$EnhancerBySpringCGLIB实例
 //参数method: 所执行的方法
@@ -18,7 +18,7 @@ CglibAopProxy.DynamicAdvisedInterceptor.class还有一个重要的属性AdvisedS
 中,它包含了一个BeanFactoryCacheOperationSourceAdvisor,BeanFactoryCacheOperationSourceAdvisor有一个CacheInterceptor,这个CacheInterceptor
 就是处理缓存相关的.
 ### 1.获取MethodInterceptor集合
-```java
+```text
 org.springframework.aop.framework.AdvisedSupport#getInterceptorsAndDynamicInterceptionAdvice
 ```
 

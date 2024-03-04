@@ -11,30 +11,12 @@
 ##### [👉👉👉垃圾回收](./doc/javabasic/gc.md)
 
 ### 🚩java常见类
-##### [👉👉👉CompletableFuture](doc/commonclass/completablefuture.md)
+##### [👉👉👉线程池ThreadPoolExecutor](doc/commonclass/ThreadPoolExecutor.md)
+##### [👉👉👉阻塞队列BlockingQueue](doc/commonclass/BlockingQueue.md)
+##### [👉👉👉CompletableFuture](doc/commonclass/CompletableFuture.md)
 ##### [👉👉👉ThreadLocal](doc/commonclass/ThreadLocal.md)
 ##### [👉👉👉AQS](doc/commonclass/AQS.md)
 ##### [👉👉👉可重入读写锁的原理ReentrantReadWriteLock](doc/commonclass/ReentrantReadWriteLock.md)
-
-### 🚩常用工具
-##### [👉👉👉Git常用的操作](./doc/git.md)
-##### [👉👉👉Docker常用的操作](./doc/docker.md)
-##### [👉👉👉linux常用的操作](doc/linux/linux常用命令.md)
-##### [👉👉👉maven的使用](doc/tool/maven的使用.md)
-##### [👉👉👉maven插件开发.md](doc/tool/maven插件开发.md)
-
-### 🚩并发框架
-##### [👉👉👉线程池](./doc/threadpoolexecutor.md)
-##### [👉👉👉spring的线程池](./doc/threadpoolexecutor.md)
-##### [👉👉👉CompletableFuture](doc/commonclass/completablefuture.md)
-
-### 🚩Redis使用
-##### [👉👉👉客户端缓存-1(官方文档翻译)](doc/computerscience/float-binary.md)
-##### [👉👉👉客户端缓存-2(动手实践)](doc/computerscience/float-binary.md)
-
-### 🚩linux系统
-##### [👉👉👉linux常用命令](doc/linux/linux常用命令.md)
-##### [👉👉👉linux文件权限](./doc/linux/linux文件权限.md)
 
 ### 🚩mysql
 ##### [👉👉👉mysql的配置更改](doc/mysql/mysql的配置更改.md)
@@ -46,20 +28,33 @@
 ##### [👉👉👉mysql的参数优化](doc/mysql/mysql的配置优化.md)
 ##### [👉👉👉从一次实践中理解mysql锁-1](doc/mysql/从一次实践中理解mysql锁-1.md)
 
-### 🚩spring-boot
-##### [👉👉👉@ConfigurationProperties的原理](doc/springboot/@ConfigurationProperties的原理.md)
-##### [👉👉👉BeanPostProcessor的原理](doc/springboot/BeanPostProcessor.md)
-##### [👉👉👉@Import注解](doc/springboot/@Import注解.md)
-##### [👉👉👉springboot的初始化器](doc/springboot/springboot的初始化器.md)
-##### [👉👉👉bean的种类](doc/springboot/bean的种类.md)
-##### [👉👉👉普通bean的创建顺序](doc/springboot/普通bean的创建顺序.md)
+### 🚩Redis使用
+##### [👉👉👉客户端缓存-1(官方文档翻译)](doc/redis/客户端缓存-1(官方文档翻译).md)
+##### [👉👉👉客户端缓存-2(动手实践)](doc/redis/redis-persistence-1.md)
+
+### 🚩spring家族
+##### [👉👉👉@ConfigurationProperties的原理](doc/spring/@ConfigurationProperties的原理.md)
+##### [👉👉👉BeanPostProcessor的原理](doc/spring/BeanPostProcessor.md)
+##### [👉👉👉@Import注解](doc/spring/@Import注解.md)
+##### [👉👉👉springboot的初始化器](doc/spring/springboot的初始化器.md)
+##### [👉👉👉bean的种类](doc/spring/bean的种类.md)
+##### [👉👉👉普通bean的创建顺序](doc/spring/普通bean的创建顺序.md)
+##### [👉👉👉普通bean的创建顺序](doc/spring/nacos嵌入spring流程.md)
+
+### 🚩linux
+##### [👉👉👉linux常用命令](doc/linux/linux常用命令.md)
+##### [👉👉👉linux文件权限](./doc/linux/linux文件权限.md)
 
 
-### 🚩工具库
-##### [👉👉👉jackson基础](doc/tool/jackson基础.md)
-##### [👉👉👉maven的使用](doc/tool/maven的使用.md)
-##### [👉👉👉maven插件开发.md](doc/tool/maven插件开发.md)
-##### [👉👉👉nacos嵌入spring流程.md](doc/tool/nacos嵌入spring流程.md)
+### 🚩其他
+##### [👉👉👉Docker常用的操作](doc/docker.md)
+##### [👉👉👉Git常用的操作](doc/git.md)
+##### [👉👉👉jackson基础](doc/jackson基础.md)
+##### [👉👉👉maven的使用](doc/maven的使用.md)
+##### [👉👉👉maven插件开发.md](doc/maven插件开发.md)
+
+
+
 
 
 

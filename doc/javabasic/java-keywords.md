@@ -15,3 +15,4 @@ volatile仅仅是保证当前线程读取到的变量是最新的，但是其他
 参考：
 - [并发理论基础：指令重排序问题](https://zhuanlan.zhihu.com/p/298448987)
 - [volatile底层原理：从CPU架构到内存屏障之旅](https://juejin.cn/post/7070091066044579876)
+- [java-volatile](https://chercher.tech/java-programming/java-volatile)

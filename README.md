@@ -25,7 +25,7 @@
 ##### [👉👉👉mysql的锁-1-全局锁](doc/mysql/mysql的多版mysql的锁-1-全局锁.md)
 ##### [👉👉👉mysql的undo-logs](doc/mysql/mysql的undo-logs.md)
 ##### [👉👉👉mysql的redo-logs](doc/mysql/mysql的redo-logs.md)
-##### [👉👉👉mysql的参数优化](doc/mysql/mysql的配置优化.md)
+##### [👉👉👉mysql的性能优化](doc/mysql/mysql的性能优化.md)
 ##### [👉👉👉从一次实践中理解mysql锁-1](doc/mysql/从一次实践中理解mysql锁-1.md)
 
 ### 🚩Redis使用

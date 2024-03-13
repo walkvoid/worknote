@@ -12,10 +12,6 @@
 线程a已经加过一次读锁了，当它再次加读锁时，依然可以获取锁资源成功。首个加读锁线程会累加firstReaderHoldCount表示重入次数，非首个加读锁线程会在
 ThreadLocal中维护一个计数器count表示重入次数。
 ```
-- 读-写可重入：
-```text
-
-```
 - 写-读可重入：
 ```text
 如果此前线程a已经加过写锁了，此时AQS.exclusiveOwnerThread=线程a，
@@ -23,4 +19,9 @@ ThreadLocal中维护一个计数器count表示重入次数。
 - 写-写可重入：
 ```text
 线程a先前已经加过写锁了，此时AQS.exclusiveOwnerThread=线程a，AQS.state=1，线程a再次加读锁时，将AQS.state加1后返回，表示获取锁资源成功。
+```
+
+- 注意：读-写**不**可重入
+```text
+线程a已经加过一次读锁了，线程a接下来尝试获取写锁时，线程a将会park住自己而造成死锁，这是因为线程a的前节点为空没有线程会去唤醒它
 ```

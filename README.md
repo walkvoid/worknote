@@ -2,6 +2,7 @@
 ### 🚩计算机基础
 ##### [👉👉👉浮点数的二进制表示](doc/computerscience/float-binary.md)
 ##### [👉👉👉计算机的组成](doc/computerscience/computer-composition.md)
+##### [👉👉👉大端和小端模式](doc/computerscience/LittleAndBigEdian.md)
 
 ### 🚩java基础
 ##### [👉👉👉线程中断](./doc/javabasic/thead-interrupt.md)

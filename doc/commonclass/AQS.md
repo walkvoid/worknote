@@ -5,3 +5,9 @@
 
 提供了独占模式和共享模式,独占模式模式对应了tryAcquire方法和tryRelease方法,共享模式对应了tryAcquireShared方法和tryReleaseShared方法,
 在独占模式,当一个线程获取锁资源成功,其他线程将无法获取此资源.共享模式允许多个线程获取同一个锁资源.
+
+共享模式最
+
+
+参考：
+- [从源码层面解析yield、sleep、wait、park](https://juejin.cn/post/6844903971463626766)

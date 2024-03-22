@@ -9,6 +9,7 @@
 ##### [👉👉👉java关键字](./doc/javabasic/java-keywords.md)
 ##### [👉👉👉java引用类型](./doc/javabasic/java-reference.md)
 ##### [👉👉👉垃圾回收](./doc/javabasic/gc.md)
+##### [👉👉👉java日志体系](./doc/javabasic/java-log.md)
 
 ### 🚩java常见类
 ##### [👉👉👉线程池ThreadPoolExecutor](doc/commonclass/ThreadPoolExecutor.md)

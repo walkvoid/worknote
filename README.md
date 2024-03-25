@@ -11,6 +11,7 @@
 ##### [👉👉👉java引用类型](./doc/javabasic/java-reference.md)
 ##### [👉👉👉垃圾回收](./doc/javabasic/gc.md)
 ##### [👉👉👉java日志体系](./doc/javabasic/java-log.md)
+##### [👉👉👉动态代理](./doc/javabasic/proxy.md)
 
 ### 🚩java常见类
 ##### [👉👉👉线程池ThreadPoolExecutor](doc/commonclass/ThreadPoolExecutor.md)

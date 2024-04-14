@@ -42,7 +42,8 @@
 ##### [👉👉👉springboot的初始化器](doc/spring/springboot的初始化器.md)
 ##### [👉👉👉bean的种类](doc/spring/bean的种类.md)
 ##### [👉👉👉普通bean的创建顺序](doc/spring/普通bean的创建顺序.md)
-##### [👉👉👉普通bean的创建顺序](doc/spring/nacos嵌入spring流程.md)
+##### [👉👉👉nacos嵌入spring流程](doc/spring/nacos嵌入spring流程.md)
+##### [👉👉👉spring的工厂bean](doc/spring/FactoryBean.md)
 
 ### 🚩linux
 ##### [👉👉👉linux常用命令](doc/linux/linux常用命令.md)

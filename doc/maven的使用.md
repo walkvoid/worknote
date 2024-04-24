@@ -143,6 +143,22 @@ spring.application.name=${my.project.name}
 <name>maven-demo1-module1-user-api</name>
 ```
 
+### 复用其他项目的dependencies
+```
+#比如我们想复用springboot中的依赖
+<dependencyManagement>
+<dependencies>
+    <dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-dependencies</artifactId>
+	<version>${spring-boot.version}</version>
+	<type>pom</type>
+	<scope>import</scope>
+    </dependency>
+</dependencies>
+</dependencyManagement>
+```
+
 ### 常用插件:spring-boot-maven-plugin
 ```text
 <build>

@@ -59,3 +59,25 @@ git push -u origin 分支名
 git branch --set-upstream-to=origin/远程分支名 本地分支名
 #如果是更新本地当前分支,“本地分支名”可以省略
 ```
+
+#### 使用git-filter-repo更新提交记录
+```
+#使用pip 安装git-filter-repo
+pip3 install git-filter-repo
+
+#看安装成功的提示,将git-filter-repo安装的目录添加到系统环境变量中
+
+#在项目下创建一个名称mymailmap文件,文件名任意取,内容为
+newName <newMail@mail.com>  <oldMail1@mail.com>
+newName <newMail@mail.com>  <oldMail2@mail.com>
+newName <newMail@mail.com>  <oldMail3@mail.com>
+
+#执行
+ git filter-repo -f --mailmap .\mymailmap
+
+#成功后,本地项目会丢失远程仓库的地址,需要重新设置远程地址和追踪分支
+
+#强制提交
+
+
+```

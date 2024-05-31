@@ -146,6 +146,20 @@ objectMapper.registerModule(javaTimeModule);
 objectMapper的配置是有缓存的,这意味着你做好了配置并使用了它,例如序列化一个pojo，紧接着你再更改配置是不生效的。 常见的做法是在静态代码块中配置好,
 后续的使用都不修改配置信息。
 
+### 配置支持java8的time
+```text
+//如果不配置，序列化将报错：
+22:30:11.252 [main] ERROR com.github.walkvoid.microservice.temp.utils.JsonUtils - Parse object to json Pretty error:Java 8 date/time type `java.time.LocalDate` not supported by default: add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" to enable handling (through reference chain: com.aa.bbb.JsonPojo["localDate"])
+
+所以需要添加下面的配置：
+JavaTimeModule javaTimeModule = new JavaTimeModule();
+javaTimeModule.addSerializer(LocalDateTime.class,new LocalDateTimeSerializer(dateTimeFormat));
+javaTimeModule.addDeserializer(LocalDateTime.class,new LocalDateTimeDeserializer(dateTimeFormat));
+SimpleModule simpleModule = new SimpleModule();
+objectMapper.registerModule(javaTimeModule);
+objectMapper.registerModule(simpleModule);
+```
+
 ### 更加细粒度地操纵json
 ```groovy
 //手动构造一个json串

@@ -46,6 +46,7 @@
 ##### [👉👉👉spring加载自定义的class](doc/spring/spring加载自定义的class.md)
 ##### [👉👉👉springmvc处理http请求的流程](doc/spring/springmvc处理http请求的流程.md)
 ##### [👉👉👉springmvc参数校验validation的流程](doc/spring/springmvc参数校验validation的流程.md)
+##### [👉👉👉spring的Resource.md](doc/spring/spring的Resource.md)
 
 ### 🚩linux
 ##### [👉👉👉linux常用命令](doc/linux/linux常用命令.md)

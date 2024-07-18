@@ -1,11 +1,28 @@
-##### echo操作文件
+# Linux常用命令
+## 文件读取
+### more命令
+more会将整个文件读取到内存，然后一页页展示，使用Page Up 和Page Down翻页，也可以使用b和空格翻页  
+```shell
+more 文件名
+```
+
+### less命令
+和more不同，less并不会一次性将文件读取到内存中，适合大文件。
+less也提供了翻页查看功能，使用Page Up 和Page Down翻页，也可以使用b和空格翻页。
+```shell
+less +/关键字 文件名
+less +/关键字1.*关键字2 文件名
+```
+
+##文件写入
+### echo写入内容
 ``` 
 #将aaa写入文件，会覆盖原来文件的内容
 echo 'aaa' > tmp.txt
 #将bbb追加写入文末尾
 echo 'bbb' >> tmp.txt
 ```
-##### sed操作文件
+### sed修改内容
 ```text
 #更改文件中的匹配项
 sed -i ‘s/oldstr/newstr/g’ file

@@ -1,4 +1,5 @@
-#### 插件的pom
+## maven插件开发实战
+#### 插件开发所需的依赖
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -106,6 +107,33 @@ public class ConflictCheckMojo extends AbstractMojo {
     <version>3.2.1</version>
 </dependency>
 ```
+#### 插件的使用
+
+```text
+<plugin>
+    <groupId>com.mavendemo1</groupId>
+    <artifactId>conflictcheck-maven-plugin</artifactId>
+    <version>${revision}</version>
+    <executions>
+        <execution>
+            <phase>compile</phase>
+            <goals>
+                <goal>conflict-check</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <authorName>walkvoid</authorName>
+        <projectBasedir>${project.basedir}</projectBasedir>
+    </configuration>
+</plugin>
+```
+- 一个插件可以包含多个goal，比如maven官方的install插件就包含了help，install和install-file三个goal，所以在<executions>标签下我们可
+以执行一个goal。
+- 对于我们自定义的参数，我们放在<configuration>标签下，标签名就是我们的参数名。
+
+#### 插件开发debug
+插件开发的dubug和我们写普通的业务代码不同
 
 #### maven中的核心对象
 ```java

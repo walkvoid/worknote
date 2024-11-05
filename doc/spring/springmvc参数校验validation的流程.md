@@ -23,7 +23,7 @@ public class DataBinder implements PropertyEditorRegistry, TypeConverter {
 }
 ```
 在运行中spring会将一个Validator的子类org.springframework.boot.autoconfigure.validation.ValidatorAdapter实例添加到validators中，
-ValidatorAdapter里边会通过spi的方式加载org.hibernate.validator.internal.engine.ValidatorImpl从而完成参数的校验。
+ValidatorAdapter里边会通spi的方式加载org.hibernate.validator.internal.engine.ValidatorImpl从而完成参数的校验。
 ```text
 hibernate-validator-6.2.5.Final.jar
     |-META-INF

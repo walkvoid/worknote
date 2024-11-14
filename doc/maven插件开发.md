@@ -133,7 +133,10 @@ public class ConflictCheckMojo extends AbstractMojo {
 - 对于我们自定义的参数，我们放在<configuration>标签下，标签名就是我们的参数名。
 
 #### 插件开发debug
-插件开发的dubug和我们写普通的业务代码不同
+    public void execute() throws MojoExecutionException, MojoFailureException {
+插件开发的dubug和我们写普通的业务代码不同，借助IDEA工具，现在maven插件的execute()方法里代码打上断点，
+然后在右侧的maven管理页面找到一个使用了该插件的项目，在Plugins目录下找到要调试插件的goal，右键点击"Debug 'xxx''"，执行后就会发现已经
+执行到断点处了。
 
 #### maven中的核心对象
 ```java

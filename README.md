@@ -9,9 +9,11 @@
 ##### [👉👉👉java内存模型](./doc/javabasic/java-memory-model.md)
 ##### [👉👉👉java关键字](./doc/javabasic/java-keywords.md)
 ##### [👉👉👉java引用类型](./doc/javabasic/java-reference.md)
-##### [👉👉👉垃圾回收](./doc/javabasic/gc.md)
 ##### [👉👉👉java日志体系](./doc/javabasic/java-log.md)
 ##### [👉👉👉动态代理](./doc/javabasic/proxy.md)
+##### [👉👉👉垃圾回收](./doc/javabasic/gc.md)
+##### [👉👉👉jvm命令-jstat](./doc/javabasic/jvm-jstat.md)
+##### [👉👉👉jvm命令-jmap](./doc/javabasic/jvm-map.md)
 
 ### 🚩java常见类
 ##### [👉👉👉线程池ThreadPoolExecutor](doc/commonclass/ThreadPoolExecutor.md)

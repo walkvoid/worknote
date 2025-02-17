@@ -89,8 +89,7 @@ public class ValidationTestController {
     }
 }
 ```
-原因是针对controller不同的方法，spring有不同的HandlerMethodArgumentResolver，针对带@RequestBody注解的方法，
-springmvc会使用RequestResponseBodyMethodProcessor来处理。
+针对controller不同的方法，spring有不同的HandlerMethodArgumentResolver，例如带@RequestBody注解的方法，springmvc会使用RequestResponseBodyMethodProcessor来处理。
 
 
 - **当校验的参数原始类型时，需要在controller上加上@Validated注解（不能是@Valid）。**
@@ -108,7 +107,6 @@ public class ValidationTestController {
     }
 }
 ```
-而针对参数不带@RequestBody注解的方法，在不加@Validated的情况下，springmvc使用的是RequestParamMethodArgumentResolver来处理，
-但是这个resolver并没有参数校验的逻辑。但是如果加了@Validated则实在org.springframework.web.servlet.HandlerExecutionChain#applyPostHandle
-拦截器中处理的
+在不加@Validated的情况下，springmvc使用的是RequestParamMethodArgumentResolver来处理， 但是这个resolver并没有参数校验的逻辑。
+但是如果加了@Validated则是在org.springframework.web.servlet.HandlerExecutionChain#applyPostHandle拦截器中处理的。
 
